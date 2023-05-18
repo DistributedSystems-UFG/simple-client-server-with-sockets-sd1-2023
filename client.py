@@ -4,7 +4,7 @@ import pickle
 
 s = socket(AF_INET, SOCK_STREAM)
 s.connect((HOST, PORT)) # connect to server (block until accepted)
-msg = ('add',['1','2'])
+msg = ('add',[1,2])
 s.send(pickle.dumps(msg))  # send some data
 data = s.recv(1024)     # receive the response
 print (pickle.loads(data))            # print the result
